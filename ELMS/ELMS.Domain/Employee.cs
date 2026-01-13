@@ -57,6 +57,28 @@ public class Employee
     // (We are NOT using this in Phase 0.1 intentionally)
     // Example:
     // public string NickName { get; set; }
+
+
+    public void UpdateMobileNumber(string newMobileNumber)
+    {
+        // Encapsulation:
+        // The outside world cannot directly modify MobileNumber.
+        // Any change must come through this method, which acts as a controlled gate.
+
+        // Business rule validation – ensures object never enters an invalid state
+        if (string.IsNullOrWhiteSpace(newMobileNumber))
+            throw new ArgumentException("Mobile number cannot be empty");
+
+        // Business invariant – mobile number must always be exactly 10 digits
+        if (newMobileNumber.Length != 10)
+            throw new ArgumentException("Mobile number must be 10 digits");
+
+        // Encapsulation enforcement:
+        // MobileNumber has a private setter, so this assignment
+        // is only possible from inside the Employee class.
+        MobileNumber = newMobileNumber;
+    }
+
 }
 
 
