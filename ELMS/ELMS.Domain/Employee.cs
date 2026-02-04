@@ -2,6 +2,8 @@
 
 public class Employee
 {
+    private const string DefaultEmail = "email_not_created@company.com";
+
     // get;
     // Read-only property
     // ✔ Value can be assigned ONLY inside the constructor
@@ -30,21 +32,86 @@ public class Employee
     // Protects the internal state from uncontrolled modification
     public string MobileNumber { get; private set; } = string.Empty;
 
+    public int LeaveBalance { get; private set; }
 
-    // Constructor
-    // Responsible for creating a VALID Employee object
-    // Enforces domain rules at birth
-    public Employee(string employeeId, string employeeName, string email, string mobileNumber)
+    // MASTER CONSTRUCTOR
+    // ------------------
+    // This constructor is the SINGLE place where:
+    // - All mandatory data is validated
+    // - All assignments happen
+    // - Domain rules are enforced
+    //
+    // Rule:
+    // If an Employee object exists, it MUST have passed through this constructor.
+    //
+    // All other constructors delegate to this one using constructor chaining.
+    public Employee(
+        string employeeId,
+        string employeeName,
+        string email,
+        string mobileNumber,
+        int leaveBalance)
     {
+        // Validation ensures object is valid at the moment of creation
         ArgumentException.ThrowIfNullOrEmpty(employeeId.Trim(), nameof(employeeId));
         ArgumentException.ThrowIfNullOrEmpty(employeeName.Trim(), nameof(employeeName));
         ArgumentException.ThrowIfNullOrEmpty(email.Trim(), nameof(email));
         ArgumentException.ThrowIfNullOrEmpty(mobileNumber.Trim(), nameof(mobileNumber));
 
+        // State initialization happens only here
         EmployeeId = employeeId;
         EmployeeName = employeeName;
         Email = email;
         MobileNumber = mobileNumber;
+        LeaveBalance = leaveBalance;
+    }
+
+    // OVERLOADED CONSTRUCTOR (DEFAULT LEAVE)
+    // -------------------------------------
+    // Purpose:
+    // Provides a simpler way to create an Employee
+    // when the caller does NOT care about leave balance.
+    //
+    // Constructor chaining:
+    // This constructor does NOT contain validation or assignments.
+    // It delegates responsibility to the master constructor
+    // by supplying a DEFAULT leave balance.
+    //
+    // Control flow:
+    // Caller -> this constructor -> master constructor
+    public Employee(
+        string employeeId,
+        string employeeName,
+        string email,
+        string mobileNumber)
+        : this(employeeId, employeeName, email, mobileNumber, 10)
+    {
+        // Intentionally empty
+    }
+
+    // OVERLOADED CONSTRUCTOR (DEFAULT EMAIL)
+    // -------------------------------------
+    // Purpose:
+    // Allows Employee creation when email is not yet available.
+    //
+    // Constructor chaining:
+    // This constructor supplies a DEFAULT email value
+    // and delegates all validation and initialization
+    // to the master constructor.
+    //
+    // Important:
+    // Constructor chaining (this(...)) executes BEFORE this body runs.
+    // Therefore, only constants or static values can be used here.
+    //
+    // Control flow:
+    // Caller -> this constructor -> another constructor -> master constructor
+    public Employee(
+        string empId,
+        string empName,
+        string mobileNumber)
+        : this(empId, empName, DefaultEmail, mobileNumber)
+    {
+        // Intentionally empty
     }
 
 
@@ -57,8 +124,6 @@ public class Employee
     // (We are NOT using this in Phase 0.1 intentionally)
     // Example:
     // public string NickName { get; set; }
-
-
     public void UpdateMobileNumber(string newMobileNumber)
     {
         // Encapsulation:
