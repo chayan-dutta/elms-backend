@@ -1,11 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36717.8 d17.14
+VisualStudioVersion = 17.14.36717.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELMS.Temp.Console", "ELMS.Temp.Console\ELMS.Temp.Console.csproj", "{74654DA1-17D1-47FD-8C53-BBCF9859A534}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELMS.Domain", "ELMS.Domain\ELMS.Domain.csproj", "{A9AA7D01-64EA-45B1-8A32-8E040C6C5758}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELMS.Application", "ELMS.Application\ELMS.Application.csproj", "{36C3354F-D794-413B-B3C8-EEFB0C58503A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELMS.Infrastructure", "ELMS.Infrastructure\ELMS.Infrastructure.csproj", "{5A212E21-25C4-4996-AFF6-3638B872BBEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELMS.API", "ELMS.API\ELMS.API.csproj", "{38D0BC63-A856-4B61-9DA9-2E145D674E91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{A9AA7D01-64EA-45B1-8A32-8E040C6C5758}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9AA7D01-64EA-45B1-8A32-8E040C6C5758}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9AA7D01-64EA-45B1-8A32-8E040C6C5758}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36C3354F-D794-413B-B3C8-EEFB0C58503A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36C3354F-D794-413B-B3C8-EEFB0C58503A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36C3354F-D794-413B-B3C8-EEFB0C58503A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36C3354F-D794-413B-B3C8-EEFB0C58503A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A212E21-25C4-4996-AFF6-3638B872BBEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A212E21-25C4-4996-AFF6-3638B872BBEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A212E21-25C4-4996-AFF6-3638B872BBEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A212E21-25C4-4996-AFF6-3638B872BBEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38D0BC63-A856-4B61-9DA9-2E145D674E91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38D0BC63-A856-4B61-9DA9-2E145D674E91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38D0BC63-A856-4B61-9DA9-2E145D674E91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38D0BC63-A856-4B61-9DA9-2E145D674E91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
