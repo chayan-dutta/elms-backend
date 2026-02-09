@@ -34,6 +34,8 @@ public class Employee
 
     public int LeaveBalance { get; private set; }
 
+    public Gender Gender { get; }
+
     // MASTER CONSTRUCTOR
     // ------------------
     // This constructor is the SINGLE place where:
@@ -144,6 +146,33 @@ public class Employee
         MobileNumber = newMobileNumber;
     }
 
+    /// <summary>
+    /// It will be used to deduct the leave balance when leave gets approved.
+    /// </summary>
+    /// <param name="days"></param>
+    public void ConsumeLeave(int days)
+    {
+        if (days <= 0)
+            throw new ArgumentException("days cannot be less than zero");
+
+        if (days > LeaveBalance)
+            throw new ArgumentException("Not suffiecient leave balance for the employee");
+
+        LeaveBalance -= days;
+    }
+
+    // When leave gets cancelled / rejected - it will revert the leave balance
+    public void RefundLeaveBalance (int days)
+    {
+        LeaveBalance += days;
+    }
+
+}
+
+public enum Gender
+{
+    Male = 0,
+    Femalw = 1,
 }
 
 
