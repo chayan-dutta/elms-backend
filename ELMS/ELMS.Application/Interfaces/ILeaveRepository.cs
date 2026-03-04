@@ -4,5 +4,5 @@ namespace ELMS.Application.Interfaces;
 
 public interface ILeaveRepository
 {
-    public Guid ApplyForLeave(LeaveRequestDto leaveRequest)
+    //public Guid ApplyForLeave(LeaveRequestDto leaveRequest)
 }
