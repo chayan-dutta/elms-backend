@@ -3,6 +3,20 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ELMS.Infrastructure.Entities;
 
+/// <summary>
+/// Junction (bridge) table that implements the many-to-many relationship 
+/// between Role and Permission.
+///
+/// Purpose:
+/// - A Role can have multiple Permissions.
+/// - A Permission can belong to multiple Roles.
+/// - This table links them together.
+///
+/// Each record represents one Permission assigned to one Role.
+///
+/// A unique constraint on (RoleId, PermissionId) ensures
+/// the same permission is not assigned to the same role twice.
+/// </summary>
 [Table("rolePermission")]
 public class RolePermissionEntity
 {
