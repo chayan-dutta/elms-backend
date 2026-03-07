@@ -10,13 +10,13 @@ internal class UserRoleEntityConfig : IEntityTypeConfiguration<UserRoleEntity>
     {
         builder.HasOne<EmployeeEntity>()
             .WithMany()
-            .HasForeignKey(ur => ur.EmployeeId);
+            .HasForeignKey(ur => ur.UserId);
 
         builder.HasOne<RoleEntity>()
                .WithMany()
                .HasForeignKey(ur => ur.RoleId);
 
-        builder.HasIndex(ur => new { ur.EmployeeId, ur.RoleId })
+        builder.HasIndex(ur => new { ur.UserId, ur.RoleId })
                .IsUnique();
     }
 }

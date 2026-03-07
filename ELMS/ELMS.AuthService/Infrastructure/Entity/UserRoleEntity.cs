@@ -11,8 +11,8 @@ public class UserRoleEntity
     public Guid UserRoleId { get; set; }
 
     [Required]
-    [Column("employeeId", TypeName = "uuid")]
-    public Guid EmployeeId { get; set; }
+    [Column("userId", TypeName = "uuid")]
+    public Guid UserId { get; set; }
 
     [Required]
     [Column("roleId", TypeName = "uuid")]
