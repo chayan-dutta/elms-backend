@@ -24,4 +24,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ELMS.CommonUtils\ELMS.CommonUtils.csproj" />
+  </ItemGroup>
+
 </Project>

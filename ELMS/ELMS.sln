@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELMS.LeaveService", "ELMS.L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELMS.NotificationService", "ELMS.NotificationService\ELMS.NotificationService.csproj", "{15B8B1E6-2FDF-4F5A-A5F2-1E0069DAD45C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELMS.CommonUtils", "ELMS.CommonUtils\ELMS.CommonUtils.csproj", "{F91955BE-4172-4813-A158-96FF1567683F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{15B8B1E6-2FDF-4F5A-A5F2-1E0069DAD45C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15B8B1E6-2FDF-4F5A-A5F2-1E0069DAD45C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15B8B1E6-2FDF-4F5A-A5F2-1E0069DAD45C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F91955BE-4172-4813-A158-96FF1567683F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F91955BE-4172-4813-A158-96FF1567683F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F91955BE-4172-4813-A158-96FF1567683F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F91955BE-4172-4813-A158-96FF1567683F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

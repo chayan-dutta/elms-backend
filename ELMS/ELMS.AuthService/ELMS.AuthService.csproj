@@ -26,4 +26,8 @@
     <Folder Include="Domain\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ELMS.CommonUtils\ELMS.CommonUtils.csproj" />
+  </ItemGroup>
+
 </Project>
