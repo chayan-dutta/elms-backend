@@ -15,7 +15,7 @@ public class LeaveServiceDbContext(DbContextOptions<LeaveServiceDbContext> optio
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        base.OnModelCreating(modelBuilder);
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(LeaveServiceDbContext).Assembly);
     }
 
 }
